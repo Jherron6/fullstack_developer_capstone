@@ -36,7 +36,7 @@ def login_user(request):
 # Create a `logout_request` view to handle sign out request
 @csrf_exempt
 def logout_request(request):
-      # logout(request) Terminate user session
+    # logout(request) Terminate user session
     data = {"userName": ""}  # Return empty username
     return JsonResponse(data)
 
@@ -44,7 +44,7 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-      # context = {}
+    # context = {}
 
     # Load JSON data from the request body
     data = json.loads(request.body)
@@ -74,9 +74,9 @@ def registration(request):
             email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"userName" : username, "status" : "Authenticated"}
+        data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
+    else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
@@ -98,12 +98,15 @@ def get_cars(request):
         )
     return JsonResponse({"CarModels": cars})
 
+
 """
 the `get_dealerships` render list of dealerships all by default,
 particular state if state is passed
 Updated the `get_dealerships` render list of dealerships all by default,
 particular state if state is passed
 """
+
+
 def get_dealerships(request, state="All"):
     if (state == "All"):
         endpoint = "/fetchDealers"
