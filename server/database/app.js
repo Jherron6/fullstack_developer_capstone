@@ -21,10 +21,10 @@ const Dealerships = require('./dealership');
 
 try {
   Reviews.deleteMany({}).then(()=>{
-    Reviews.insertMany(reviews_dat.'reviews');
+    Reviews.insertMany(reviews_dat.reviews);
   });
   Dealerships.deleteMany({}).then(()=>{
-    Dealerships.insertMany(dealerships_data.'dealerships');
+    Dealerships.insertMany(dealerships_data.dealerships);
   });
   
 } catch (error) {
